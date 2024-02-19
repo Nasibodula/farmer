@@ -7,6 +7,7 @@
 	font-family: "Titillium Web", sans-serif;
 }
 
+
 :root {
 	--mainColor: #2E7650;
 	--mainColorLight: #569E65;
@@ -20,8 +21,9 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background: linear-gradient(45deg,#2E7650,#569E65);
+	/* background: linear-gradient(45deg,#2E7650,#569E65); */
 	color: var(--textColor);
+	overflow: hidden;
 }
 header img{
 	height: 7rem;
