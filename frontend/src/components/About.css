@@ -1,0 +1,41 @@
+.about{
+    margin: 10rem 0rem 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+    flex-wrap: wrap;
+}
+
+.about .about-us{
+    width: 40rem;
+    font-size: 1.3rem;
+    color: #615d5d;
+
+}
+.veges{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+}
+.orange{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 0.7rem;
+}
+@media screen and (max-width: 768px){
+    .veges{
+        width: 13rem;
+        height: 13rem;
+    }
+    .orange{
+        width: 7.5rem;
+        height: 8rem;
+    }
+    .about img{
+        margin-top: 1.5rem;
+    }
+}

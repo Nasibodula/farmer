@@ -1,0 +1,55 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.contact .contactcontainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.contact h2{
+    color: rgb(2, 71, 2);   
+
+}
+.contact h1{
+    color:#615d5d ;
+    font-size: 3rem;
+}
+.contact input{
+    border: 3px solid rgb(2, 71, 2);
+    height: 4rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color:#615d5d ;
+}
+.contact textarea{
+    border: 3px solid rgb(2, 71, 2);
+    height: 8rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color:#615d5d ;
+}
+.contact button{
+    width: 13rem;
+    height: 4rem;
+    border-radius: 0.3rem;
+    background: #383737;
+    border: none;
+    color: #ffffff;
+    font-size: larger;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 768px){
+    .contact .contactcontainer{
+        width: 80%;
+    }
+    .contact h1{
+        font-size: 2rem;
+    }
+  }
