@@ -7,7 +7,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
   name:{
     type: String,
-    required: function() {
+     required: function() {
       return this.isSignup ? true : false;
     },
   },

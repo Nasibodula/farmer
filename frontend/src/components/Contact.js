@@ -82,7 +82,6 @@ const Contact = () => {
   
     return (
         <div>
-            <Navbar/>
             <div className='contact'>
                 <div className='contactcontainer'>
                     <h2>OUR CONTACT</h2>
