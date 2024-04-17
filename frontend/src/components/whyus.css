@@ -1,0 +1,9 @@
+.us{
+    height: 70vh;
+    width: 100%;
+    background: rgb(2, 71, 2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+}

@@ -1,0 +1,45 @@
+.review{
+    margin: 5rem 5rem
+}
+.reviewcontainer h1{
+    color:rgb(2, 71, 2) ;
+    font-size: 2rem;
+}
+
+.slider {
+    width: 30rem;
+    padding: 3rem;
+    height: auto;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem  1.3rem 3rem 1.3rem;
+
+}
+.slider img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5rem;
+    margin-bottom: 2px;
+    border: 8px solid rgb(2, 71, 2);
+}
+.commentname{
+    color: rgb(2, 71, 2);
+    font-size: 1.5rem;
+}
+.comment{
+    color:#615d5d; 
+    font-size: 1.2rem;
+}
+
+  @media only screen and (max-width: 768px) {
+    .slider {
+        width: 20rem;
+        padding: 10rem;
+        height: auto;
+    }
+    .slider img{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 3rem;
+    }
+
+  }
