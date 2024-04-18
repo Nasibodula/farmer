@@ -1,7 +1,7 @@
 const expressAsyncHandler = require("express-async-handler");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
-dotenv.config();
+dotenv.config();     
 
 let transporter = nodemailer.createTransport({   
   host: process.env.SMTP_HOST,
