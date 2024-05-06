@@ -20,23 +20,27 @@ function App() {
           <Routes>
           <Route 
               path="/login" 
-              element={!user ? <Login /> : <Navigate to="/"/>} 
+              element={<Loin/>}
+              // element={!user ? <Login /> : <Navigate to="/"/>} 
             />
             <Route 
               path="/chat" 
-              element={user ? <Chat /> : <Navigate to="/login" />} 
+              // element={user ? <Chat /> : <Navigate to="/login" />} 
             />
             <Route 
-              path="/weathercard" 
-              element={user ? <WeatherCard/> : <Navigate to="/login" />} 
+              path="/weathercard"
+              element={<WeatherCard/>}
+              // element={user ? <WeatherCard/> : <Navigate to="/login" />} 
             />
             <Route 
               path="/aboutus" 
-              element={user ? <Aboutus /> : <Navigate to="/login" />} 
+              element={<Aboutus/>}  
+              // element={user ? <Aboutus /> : <Navigate to="/login" />} 
             />
             <Route 
               path="/contactus" 
-              element={user ? <Contactus/> : <Navigate to="/login" />} 
+              element={<Contactus/>}
+              // element={user ? <Contactus/> : <Navigate to="/login" />} 
             />
             <Route 
               path="/" 
