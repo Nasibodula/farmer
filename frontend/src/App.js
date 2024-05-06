@@ -18,35 +18,37 @@ function App() {
       <BrowserRouter>
         <div className="pages">
           <Routes>
-          <Route 
-              path="/login" 
-              element={<Loin/>}
-              // element={!user ? <Login /> : <Navigate to="/"/>} 
-            />
-            <Route 
-              path="/chat" 
-              // element={user ? <Chat /> : <Navigate to="/login" />} 
-            />
-            <Route 
-              path="/weathercard"
-              element={<WeatherCard/>}
-              // element={user ? <WeatherCard/> : <Navigate to="/login" />} 
-            />
-            <Route 
-              path="/aboutus" 
-              element={<Aboutus/>}  
-              // element={user ? <Aboutus /> : <Navigate to="/login" />} 
-            />
-            <Route 
-              path="/contactus" 
-              element={<Contactus/>}
-              // element={user ? <Contactus/> : <Navigate to="/login" />} 
-            />
-            <Route 
-              path="/" 
-                element={<Home/>}
-              // element={user ? <Home /> : <Navigate to="/login" />} 
-            />
+          // <Route 
+          //     path="/login" 
+          //     element={!user ? <Login /> : <Navigate to="/"/>} 
+          //   />
+          //   <Route 
+          //     path="/chat" 
+          //     element={user ? <Chat /> : <Navigate to="/login" />} 
+          //   />
+          //   <Route 
+          //     path="/weathercard"
+          //     element={user ? <WeatherCard/> : <Navigate to="/login" />} 
+          //   />
+          //   <Route 
+          //     path="/aboutus" 
+          //     element={user ? <Aboutus /> : <Navigate to="/login" />} 
+          //   />
+          //   <Route 
+          //     path="/contactus" 
+          //     element={user ? <Contactus/> : <Navigate to="/login" />} 
+          //   />
+          //   <Route 
+          //     path="/" 
+          //     element={user ? <Home /> : <Navigate to="/login" />} 
+          //   />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/weathercard" element={<WeatherCard />} />
+          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/contactus" element={<Contactus />} />
+          <Route path="/" element={<Home />} />
           </Routes>
         </div>
       </BrowserRouter>
