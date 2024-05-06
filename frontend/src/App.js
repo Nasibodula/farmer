@@ -16,8 +16,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Navbar /> */}
-        {/* <Home/> */}
         <div className="pages">
           <Routes>
           <Route 
@@ -42,7 +40,8 @@ function App() {
             />
             <Route 
               path="/" 
-              element={user ? <Home /> : <Navigate to="/login" />} 
+                element={<Home/>}
+              // element={user ? <Home /> : <Navigate to="/login" />} 
             />
           </Routes>
         </div>
