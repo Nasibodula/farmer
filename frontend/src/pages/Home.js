@@ -1,5 +1,5 @@
 import { useEffect }from 'react'
-import { useAuthContext } from "../hooks/useAuthContext"
+// import { useAuthContext } from "../hooks/useAuthContext"
 import About from '../components/About';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -10,7 +10,7 @@ import Whyus from '../components/whyus';
 import Contact from '../components/Contact';
 
 const Home = () => {
-  const {user} = useAuthContext()
+  // const {user} = useAuthContext()
 
   return (
     <div className="home">
