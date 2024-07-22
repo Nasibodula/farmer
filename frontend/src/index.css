@@ -1,14 +1,16 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   background: #fff;
   margin: 0;
+  padding: 0;
   font-family: "Poppins";
 }
 
@@ -21,3 +23,9 @@ form.signup, form.login {
   border-radius: 4px;
 }
 
+.mgnt{
+  margin-top: 100px;
+}
+.mgnb{
+  margin-bottom: 0rem;
+}

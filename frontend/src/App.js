@@ -9,6 +9,7 @@ import Chat from './pages/Chat'
 import WeatherCard from './pages/Weather-card'
 import Aboutus from './pages/Aboutus'
 import Contactus from './pages/Contactus'
+import Footer from './components/Footer'
 
 function App() {
   const { user } = useAuthContext()

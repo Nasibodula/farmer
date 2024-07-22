@@ -6,6 +6,7 @@ import Logo from '../assets/images/Logo.png';
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 
+
 function Navbar() {
   const { logout } = useLogout()
   const { user } = useAuthContext()

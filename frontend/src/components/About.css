@@ -1,5 +1,5 @@
 .about{
-    margin: 10rem 0rem 5rem 0rem;
+    margin: 0rem 0rem 5rem 0rem;
     display: flex;
     flex-direction: column;
     display: flex;
@@ -28,14 +28,14 @@
 }
 @media screen and (max-width: 768px){
     .veges{
-        width: 13rem;
-        height: 13rem;
+        width: 18rem;
+        height: 18rem;
     }
     .orange{
-        width: 7.5rem;
+        width: 7rem;
         height: 8rem;
     }
     .about img{
-        margin-top: 1.5rem;
+        margin: 1.5rem 2rem;
     }
 }

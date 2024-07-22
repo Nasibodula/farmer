@@ -16,7 +16,7 @@ const Home = () => {
     <div className="home">
             <Hero/>
             <About/>
-            <Cards/>
+            <Cards/>           
             <Review/>
             <Whyus/>
             <Contact/>

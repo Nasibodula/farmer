@@ -35,15 +35,15 @@ const ServiceCards = () => {
       id: 2,
       title: "Live weatherforecast",
       image: weather,
-      description: "We've got bot to help farmers with all the questions they would love to ask no need to consult specialist for fee this service is free",
+      description: "Get real-time weather updates tailored for farmers. Our free service offers instant access to weather forecasts, eliminating the need for costly consultations with specialists.",
       link: <Link to='/weathercard'>Start</Link>
     },
     {
       id: 3,
-      title: "Community chat",
+      title: "HelpLine",
       image: community,
-      description: "We've got bot to help farmers with all the questions they would love to ask no need to consult specialist for fee this service is free",
-      link: <Link to='/Chat'>Start</Link>
+      description: "Reach out for assistance directly through our HelpLine. Our team is ready to provide guidance and support on any agricultural concerns you may have.",
+      link: <Link to='/contactus'>Start</Link>
     },
   ];
 

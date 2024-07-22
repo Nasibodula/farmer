@@ -45,6 +45,9 @@
     font-size: larger;
     font-weight: 600;
   }
+.contact button:hover{
+    background: #555252;
+}
   @media screen and (max-width: 768px){
     .contact .contactcontainer{
         width: 80%;

@@ -1,9 +1,20 @@
 .us{
+    display: flex;
+    flex-direction: column;
     height: 70vh;
     width: 100%;
     background: rgb(2, 71, 2);
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 5rem;
+    margin-top: 5rem 0rem 5rem ;
+    padding: 2rem;
+    gap: 1rem;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+}
+.first span{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }

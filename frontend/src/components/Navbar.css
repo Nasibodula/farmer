@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap"); */
 
 * {
 	padding: 0;
@@ -12,31 +12,36 @@
 	--mainColor: #2E7650;
 	--mainColorLight: #569E65;
 	--secondaryColor: #db2b39;
-	--textcolor: #eee;
-}
+	--textcolor: #0a0a0a;
+} 
 
 header {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background: #569e6427;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
-	padding: 0 2rem;
-	background: transparent;
-	overflow: hidden;
+	width: 100%;
+	/* padding: 0 2rem; */
+	/* background: transparent; */
+	/* overflow: hidden; */
 }
 header nav {
-	color:#000000 ;
+	/* color:#000000 ;
 	font-size: larger;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-around; */
 	/* background: #fff; */
-	background: transparent;
-	border-radius: 2rem;
-	padding: 0rem 3rem;	
-	gap: 2rem;
+	/* background: transparent; */
+	/* border-radius: 2rem; */
+	/* padding: 0rem 3rem;	 */
+	/* gap: 2rem; */
 	/* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); */
 }
-header img{
+header img{ 
 	height: 7rem;
 	width: 7rem;
 }
@@ -46,9 +51,27 @@ nav a {
 	color: var(--textColor);
 	text-decoration: none;
 }
+nav a{
+	position: relative;
+	font-size: larger;
+	justify-content: space-around;
 
+}
 nav a:hover {
-	color: var(--secondaryColor);
+	color: #fff;
+}
+nav a::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: .3s;
+}
+nav a:hover::before{
+	width: 100%;
 }
 
 header .nav-btn {
@@ -70,6 +93,10 @@ nav {
 }
 
 @media only screen and (max-width: 1024px) {
+	*{
+		margin: 0;
+		padding: 0%;
+	}
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;
@@ -79,15 +106,15 @@ nav {
 		color: var(--textcolor);
 		position: fixed;
 		top: -102vh;
-		right: 0;
+		right: -1.8%;
 		height: 100%;
 		width: 50%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: start;
 		justify-content: center;
 		gap: 1.5rem;
-		background-color: var(--mainColor);
+		background: #2e7650ef;
 		transition: 1s;
 	}
 
@@ -98,8 +125,8 @@ nav {
 
 	nav .nav-close-btn {
 		position: absolute;
-		top: 2rem;
-		right: 2rem;
+		top: 1rem;
+		right: 0rem;
 	}
 
 	nav a {
@@ -107,5 +134,5 @@ nav {
 	}
 }
 .active {
-	border-bottom: 2px solid #113b1f; /* Change color as needed */
-  }
+	/* border-bottom: 2px solid #113b1f;  */
+  } 

@@ -65,45 +65,91 @@
     width: 100%;
     background: url('../assets/images/Farm3.jpg')no-repeat center center ; 
     background-size: cover;
+    margin-bottom: 7rem;
 
 }
 .hero .herocontainer{
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-}
-.hero .brandname{
-    position: relative;
-    top:77vh;
-    left:21%;
     display: flex;
+    flex-direction: row !important;
+    /* justify-content: space-between; */
+    position: relative; 
+    justify-content: start;
     align-items: center;
-    justify-content: center;
-    height: 10rem;
-    width: 47rem;
-    border-radius: 2rem ;
-    background: #034711 ;
+    gap: 1rem;
+    top: 20%;
+}
+.hero .herocontainer .herotext{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    /* top: 30%; */
+    left: 37%;
+    color: #ffff;
+    
 
 }
-.hero .brandname span{
-    color:#ffff;
-    font-size: 5rem;
-    font-weight: 700;
+.hero .herocontainer .herotext .text1{
+    font-size: 4rem;
+    font-weight:500 ;
+    width: 100%;
+}
+.hero .herocontainer .herotext .text2{
+    font-size: 1rem;
+    width: 45%;
+
+}
+.hero .herocontainer .herotext button{
+    width: 7rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background: #2ff156;
+    border: none;
+    color: #000000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    position: relative;
+    /* left: 25%; */
+}
+
+.herocontainer .herotext button a{
+    text-decoration: none;
+    color: #000000;
 }
 @media screen and (max-width: 768px) {
     .hero{
         width: 100%;
         height: 100vh;
     }
-    .hero .brandname {
-        top: 87vh;
-        width: 15rem;
-        height: 5rem;
-        border-radius: 1rem;
+    .hero .herocontainer .herotext{
+        display: flex;
+        flex-direction: column;
+        position:absolute;
+        top: 35%;
+        left: 10%;
+        color: #ffff;
+        
+    
     }
-    .hero .brandname span{
-        color:#ffff;
-        font-size: 1.5rem;
-        font-weight: 600;
+    .hero .herocontainer .herotext .text1{
+        font-size: 3rem;
+        font-weight:400 ;
+        width: 80%;
     }
+    .hero .herocontainer .herotext .text2{
+        font-size: 0.7rem;
+        width: 50%;
+    
+    }
+    .hero .herocontainer .herotext button{
+        width: 5rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        position: relative;
+        /* left: 25%; */
+    }
+
 }

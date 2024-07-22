@@ -27,7 +27,13 @@ function Hero(){
         <div className='hero'>
             <Navbar/>
             <div className='herocontainer'>
-                <div className='brandname'><span>Farmers Knowledge</span></div>
+                <img src={Farmer} alt='farmer image' className='farmer'/>
+                <div className='herotext'>
+                    <span className='text1'>Driving Agriculture Evolution With Innovation</span>
+                    <span className='text2'>Innovation is driving the evolution of agriculture for greater productivity and sustainability</span>
+                    <button className='Learnmore'><a href='/aboutus'>Learn More</a></button>
+                </div>
+                {/* <div className='brandname'><span>Farmers Knowledge</span></div> */}
             </div>
         </div>
     )

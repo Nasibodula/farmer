@@ -1,40 +1,57 @@
-.weatherBg{
+.weatherBg {
     background: url("https://www.accuweather.com/images/hero/4/1440x450.jpg");
     height: 50vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-  }
-  .heading{
-    color:white;
-    font-weight: 700;
-    overflow: hidden;
-  }
-  .wetherResultBox{
-    margin: auto;
-    width: 500px;
-    height: 300px;
-    background: #fff;
-    margin-bottom: 2rem;
-  }
-  .weathorIcon{
-    margin-top: 2rem;
-    width: 100px;
-    height: 100px;
-  }
-  .weathorCity{
-    font-size: 35px;
-    overflow: hidden;
+    margin-top: 80px;
+}
 
-  }
-  .weathorTemp{
-    font-size:55px;
+.heading {
+    color: white;
     font-weight: 700;
     overflow: hidden;
-  }
-  @media screen and (max-width : 768px){
-    .wetherResultBox{
-      width: 80%
+    font-size: 2rem; /* Adjust size of the heading for better visibility */
+   text-align: center; /* Center-align the heading */
+}
+
+.weatherResultBox {
+    margin: auto;
+    width: 350px; /* Reduced width */
+    padding: 20px; /* Add padding for spacing */
+    height: auto; /* Height should adjust based on content */
+    background: #ffffff;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align content inside the box */
+}
+
+.weatherIcon {
+    width: 80px; /* Reduced icon size */
+    height: 80px; /* Reduced icon size */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.weatherCity {
+    font-size: 24px; /* Reduced font size */
+    margin: 5px 0; /* Space around city name */
+}
+
+.weatherTemp {
+    font-size: 36px; /* Reduced font size */
+    font-weight: 700;
+    color: #333; /* Dark color for temperature */
+}
+
+@media screen and (max-width: 768px) {
+    .weatherResultBox {
+        width: 90%; /* Adjust width for smaller screens */
     }
-  } 
+}
+.btn{
+  background:rgb(4, 100, 4) ;
+  
+}

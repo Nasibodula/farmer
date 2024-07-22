@@ -75,6 +75,13 @@
     position: relative;
     left: 25%;
   }
+  .service button:hover{
+    background: #555252;
+  }
+  button a{
+    text-decoration: none;
+    color: #ffffff;
+  }
 @media screen and (max-width: 768px){
 
     
