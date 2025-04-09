@@ -1,46 +1,307 @@
-
-.review{
-    margin: 5rem 5rem;
-}
-.reviewcontainer h1{
-    color:rgb(2, 71, 2) ;
-    font-size: 2rem;
-}
-
-.slider {
-    width: 30rem;
-    padding: 3rem;
-    height: auto;
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
-    margin: 2rem  1.3rem 3rem 1.3rem;
-
-}
-.slider img{
-    width: 7rem;
-    height: 7rem;
-    border-radius: 5rem;
-    margin-bottom: 2px;
-    border: 8px solid rgb(2, 71, 2);
-}
-.commentname{
+  .review-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .review-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #024702, #76a53a, #024702);
+  }
+  
+  .review-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .review-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .leaf-decoration {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: flutter 4s infinite ease-in-out;
+  }
+  
+  @keyframes flutter {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+  
+  .review-header h2 {
     color: rgb(2, 71, 2);
-    font-size: 1.5rem;
-}
-.comment{
-    color:#615d5d; 
     font-size: 1.2rem;
-}
-
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+  
+  .review-header h1 {
+    color: #615d5d;
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+  }
+  
+  .review-header p {
+    color: #615d5d;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  
+  .testimonial-wrapper {
+    padding: 15px;
+  }
+  
+  .testimonial-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+  
+  .quote-mark {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 4rem;
+    color: rgba(2, 71, 2, 0.1);
+    font-family: 'Georgia', serif;
+    line-height: 1;
+  }
+  
+  .testimonial-text {
+    color: #615d5d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .author-image-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+  }
+  
+  .author-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgb(2, 71, 2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .testimonial-card:hover .author-image {
+    transform: scale(1.05);
+  }
+  
+  .author-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .author-name {
+    color: rgb(2, 71, 2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+  }
+  
+  .author-title {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .rating {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .star {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-left: 2px;
+  }
+  
+  /* Customize slick slider */
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: rgb(2, 71, 2);
+    opacity: 0.3;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: rgb(2, 71, 2);
+  }
+  
+  .slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(2, 71, 2);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    background-color: rgb(2, 71, 2);
+    opacity: 0.9;
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    font-size: 20px;
+    opacity: 1;
+  }
+  
+  .slick-prev {
+    left: -10px;
+  }
+  
+  .slick-next {
+    right: -10px;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 1200px) {
+    .review-container {
+      padding: 0 1.5rem;
+    }
+    
+    .review-header h1 {
+      font-size: 2.2rem;
+    }
+    
+    .testimonial-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .review-section {
+      padding: 3rem 0;
+    }
+    
+    .review-header {
+      margin-bottom: 2rem;
+    }
+    
+    .testimonial-text {
+      font-size: 1rem;
+    }
+  }
+  
   @media only screen and (max-width: 768px) {
-    .slider {
-        width: 20rem;
-        padding: 10rem;
-        height: auto;
+    .review-section {
+      padding: 2.5rem 0;
     }
-    .slider img{
-        width: 3rem;
-        height: 3rem;
-        border-radius: 3rem;
+    
+    .review-container {
+      padding: 0 1rem;
     }
-
+    
+    .review-header h1 {
+      font-size: 1.8rem;
+    }
+    
+    .review-header h2 {
+      font-size: 1rem;
+    }
+    
+    .review-header p {
+      font-size: 1rem;
+    }
+    
+    .testimonial-card {
+      padding: 1.8rem 1.2rem;
+    }
+    
+    .quote-mark {
+      font-size: 3rem;
+      top: 15px;
+      left: 20px;
+    }
+    
+    .author-image-container {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .author-name {
+      font-size: 1.1rem;
+    }
+    
+    .slick-prev, .slick-next {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .review-section {
+      padding: 2rem 0;
+    }
+    
+    .review-header h1 {
+      font-size: 1.5rem;
+    }
+    
+    .testimonial-text {
+      font-size: 0.95rem;
+    }
+    
+    .author-image-container {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .author-name {
+      font-size: 1rem;
+    }
+    
+    .author-title {
+      font-size: 0.8rem;
+    }
+    
+    .star {
+      font-size: 1rem;
+    }
   }
