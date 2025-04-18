@@ -7,7 +7,7 @@ const userRoutes = require('./routes/user')
 const emailRoutes = require("./routes/emailRoutes");
 
 const app = express()
-const PORT = process.env.PORT || 4000; // Use a default port if PORT is not specified in .env
+const PORT = process.env.PORT || 4000; 
 const MONGODB_URI = process.env.MONGO_URI;
 
 // Middleware
@@ -69,7 +69,3 @@ app.use("/email", emailRoutes);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-
-// app.listen(PORT, () => {
-//   console.log(`Example app listening on port ${PORT}`);
-// });
