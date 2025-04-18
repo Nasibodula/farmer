@@ -7,14 +7,20 @@ export default function Chat() {
     const [value, setValue] = useState('');
     const [message, setMessage] = useState(null);
     const [previousChats, setPreviousChats] = useState(() => {
-        // Load previous chats from local storage
         const savedChats = localStorage.getItem('previousChats');
         return savedChats ? JSON.parse(savedChats) : [];
     });
     const [currentTitle, setCurrentTitle] = useState(null);
     const [sidebarActive, setSidebarActive] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const feedRef = useRef(null);
 
+    // Define toggleSidebar function
+    const toggleSidebar = () => {
+        setSidebarActive(!sidebarActive);
+    };
+
+    // Define createNewChat function
     const createNewChat = () => {
         setMessage(null);
         setValue('');
@@ -24,6 +30,7 @@ export default function Chat() {
         }
     };
 
+    // Define handleClick function
     const handleClick = (uniqueTitle) => {
         setCurrentTitle(uniqueTitle);
         setMessage(null);
@@ -33,42 +40,76 @@ export default function Chat() {
         }
     };
 
-    const toggleSidebar = () => {
-        setSidebarActive(!sidebarActive);
+    // Define handleKeyPress function
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            getMessages();
+        }
     };
 
     const getMessages = async () => {
         if (!value.trim()) return;
         
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
-                message: value,
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
+        setIsLoading(true);
+        
         try {
-            const response = await fetch('http://localhost:4000/completions', options);
+            const chatHistory = currentTitle ? 
+                previousChats
+                    .filter(chat => chat.title === currentTitle)
+                    .map(chat => ({
+                        role: chat.role,
+                        content: chat.content
+                    })) : [];
+                    
+            const messages = [
+                ...chatHistory,
+                { role: "user", content: value }
+            ];
+            
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${process.env.REACT_APP_OPENROUTER_API_KEY}`,
+                    'Content-Type': 'application/json',
+                    'HTTP-Referer': window.location.href,
+                    'X-Title': 'NDCGPT'
+                },
+                body: JSON.stringify({
+                    // Using a known working model - try these alternatives:
+                    // "openai/gpt-3.5-turbo" - Free tier available
+                    // "anthropic/claude-3-haiku" - Good balance
+                    // "google/gemini-pro" - Another good option
+                    model: "openai/gpt-3.5-turbo",
+                    messages: messages,
+                    temperature: 0.7,
+                    max_tokens: 800
+                })
+            };
+    
+            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', options);
             const data = await response.json();
+            
+            if (!response.ok) {
+                // Improved error message with API response details
+                const errorMsg = data.error?.message || 
+                               data.error?.type ||
+                               `API request failed with status ${response.status}`;
+                throw new Error(errorMsg);
+            }
             
             if (data.choices && data.choices.length > 0) {
                 setMessage(data.choices[0].message);
             } else {
-                console.error('No choices found in response:', data);
-                setMessage({ role: 'system', content: 'No valid response received from the server.' });
+                throw new Error('API returned no completions');
             }
         } catch (error) {
-            console.error('Error fetching messages:', error);
-            setMessage({ role: 'system', content: 'An error occurred while fetching the message.' });
-        }
-    };
-
-    const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            getMessages();
+            console.error('API Error:', error);
+            setMessage({ 
+                role: 'assistant', 
+                content: `Sorry, I encountered an error: ${error.message}. Please try again.`
+            });
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -78,52 +119,30 @@ export default function Chat() {
         }
         
         if (currentTitle && value && message) {
-            if (isAgricultureRelated(value) || isAgricultureRelated(message.content)) {
-                setPreviousChats((prevChats) => [
-                    ...prevChats,
-                    {
-                        title: currentTitle,
-                        role: 'user',
-                        content: value,
-                    },
-                    {
-                        title: currentTitle,
-                        role: message.role || 'assistant',
-                        content: message.content,
-                    },
-                ]);
-            } else {
-                // Default message for non-agriculture related questions
-                setPreviousChats((prevChats) => [
-                    ...prevChats,
-                    {
-                        title: currentTitle,
-                        role: 'user',
-                        content: value,
-                    },
-                    {
-                        title: currentTitle,
-                        role: 'assistant',
-                        content: 'I am programmed to only answer questions related to agriculture, plants, animals and farming. Kindly ask your question related to these topics.',
-                    },
-                ]);
-            }
-            
+            setPreviousChats((prevChats) => [
+                ...prevChats,
+                {
+                    title: currentTitle,
+                    role: 'user',
+                    content: value,
+                },
+                {
+                    title: currentTitle,
+                    role: message.role || 'assistant',
+                    content: message.content,
+                },
+            ]);
             setValue('');
         }
     }, [message, currentTitle]);
 
     useEffect(() => {
-        // Save previousChats to local storage whenever it updates
         localStorage.setItem('previousChats', JSON.stringify(previousChats));
-        
-        // Scroll to the bottom of the feed whenever previousChats updates
         if (feedRef.current) {
             feedRef.current.scrollTop = feedRef.current.scrollHeight;
         }
     }, [previousChats]);
 
-    // Add event listener for responsive sidebar
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768) {
@@ -135,19 +154,9 @@ export default function Chat() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Define currentChat and uniqueTitles
     const currentChat = previousChats.filter((previousChat) => previousChat.title === currentTitle);
     const uniqueTitles = Array.from(new Set(previousChats.map((previousChat) => previousChat.title)));
-
-    const isAgricultureRelated = (content) => {
-        const agricultureKeywords = [
-            'agriculture', 'farming', 'crop', 'harvest', 'livestock', 
-            'plant', 'soil', 'farm', 'garden', 'cattle', 'sheep', 
-            'goat', 'poultry', 'irrigation', 'fertilizer', 'seed'
-        ];
-        return agricultureKeywords.some((keyword) => 
-            content.toLowerCase().includes(keyword)
-        );
-    };
 
     return (
         <div className="chat">
@@ -189,9 +198,10 @@ export default function Chat() {
                                     onChange={(e) => setValue(e.target.value)}
                                     onKeyPress={handleKeyPress}
                                     placeholder="Ask about agriculture..."
+                                    disabled={isLoading}
                                 />
                                 <div id="submit" onClick={getMessages}>
-                                    ➢
+                                    {isLoading ? "..." : "➢"}
                                 </div>
                             </div>
                             <p className="info">
